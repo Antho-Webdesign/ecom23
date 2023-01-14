@@ -1,5 +1,13 @@
 from django.shortcuts import render
 
+from store.models import Product
+
+
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    queryset = Product.objects.all()
+    context = {
+        'products': queryset
+    }
+    return render(request, 'home.html', context)
+
