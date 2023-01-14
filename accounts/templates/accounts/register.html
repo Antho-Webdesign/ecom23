@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center mb-3">Connectez-vous</h1>
+    <div class="container-form">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username" class="mb-2">Nom d'utilisateur</label>
+                <input type="text" class="form-control mb-3" id="username" name="username" placeholder="Nom d'utilisateur">
+                <label for="email" class="mb-2">Email</label>
+                <input type="email" class="form-control mb-3" id="email" name="email" placeholder="Email">
+                <label for="password" class="mb-2">Mot de passe</label>
+                <input type="password" class="form-control mb-3" id="password" name="password" placeholder="Mot de passe">
+                <label for="password_confirm" class="mb-2">Confirmez votre mot de passe</label>
+                <input type="password" class="form-control mb-3" id="password_confirm" name="password_confirm" placeholder="Confirmez votre mot de passe">
+
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </div>
+        </form>
+    <small class="form-text text-muted text-center">Vous avez déjà un compte ? <a href="{% url 'login' %}">Connectez-vous</a></small>
+    </div>
+
+{% endblock %}

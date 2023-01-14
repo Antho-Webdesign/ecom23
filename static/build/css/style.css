@@ -1,6 +1,6 @@
 /* @charset "UTF-8" */
 /*
-    *GENERAL
+ * GENERAL
 */
 body {
   display: flex;
@@ -19,11 +19,11 @@ body {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
 }
 
 /*
-    *NAVBAR
+ * NAVBAR
 */
 .nav-link {
   color: #fff;
@@ -31,4 +31,32 @@ body {
 
 li {
   list-style: none;
+}
+
+/*
+ * FORMULAIRE
+*/
+container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.container-form > form {
+  width: 66%;
+  margin: 50px auto;
+}
+
+/*
+ * BOUTON
+*/
+.box-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
 }
