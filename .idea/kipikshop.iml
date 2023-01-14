@@ -16,8 +16,10 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/kipikshopenv/lib/python3.11/site-packages/django/contrib/sitemaps/templates" />
       <excludeFolder url="file://$MODULE_DIR$/kipikshopenv/include" />
+      <excludeFolder url="file://$MODULE_DIR$/kipikshopenv" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/inspectionProfiles" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.11" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
