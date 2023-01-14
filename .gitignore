@@ -5,3 +5,4 @@
 *.psycache
 /kipikshopenv/
 *.iml
+/staticfiles/
