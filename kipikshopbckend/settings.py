@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_sass_compiler',
     'accounts',
+    'store',
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 SASS_COMPILER_WATCH = True
 SASS_PRECISION = 8
+
+AUTH_USER_MODEL = 'accounts.Customer'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
+
 
 
 
