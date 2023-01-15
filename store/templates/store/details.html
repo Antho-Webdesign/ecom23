@@ -7,7 +7,8 @@
         Bienvenue dans l'univers de :
         <br>
         <span class="text-info fw-bold fst-italic" style="font-size: 1.5em;">
-        {{ product.marque_produit }}</span>
+        {{ product.marque_produit }}
+        </span>
     </h1>
     <!-- separateur -->
     <div class="separateur border border-1" style="display: flex; width: 80%;">
@@ -31,7 +32,7 @@
             </div>
 
             <div class="text-danger prix">
-                Prix : {{ price_ttc }}€ <small class="text-muted">TTC</small>
+                Prix : {{ product.ttc_price }}€ <small class="text-muted">TTC</small>
             </div>
 
             {% if user.is_authenticated %}
@@ -43,7 +44,9 @@
                     <a class="text-warning" href="{% url 'login' %}">Connectez-vous pour ajouter au panier</a>
                 </p>
             {% endif %}
-
+         <p class="bg-gradient fs-5 mt-5">
+                    <a class="text-warning" href="{% url 'home' %}">Retour</a>
+                </p>
         </div>
     </div>
 

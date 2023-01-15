@@ -66,6 +66,7 @@ container-form {
 */
 .img-product {
   width: 33% !important;
+  height: 100% !important;
 }
 
 /*
@@ -77,4 +78,26 @@ container-form {
   justify-content: center;
   margin: auto;
   text-align: justify;
+}
+
+/*
+ * PRODUCT DETAILS
+*/
+.details_box {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+  align-items: center;
+}
+
+.separateur {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.product-description {
+  font-size: 0.7em;
+  line-height: 2.3;
 }
