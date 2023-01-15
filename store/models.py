@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 
+from kipikshopbckend.settings import AUTH_USER_MODEL
+
 
 # Category model
 class Category(models.Model):
@@ -44,3 +46,36 @@ class Product(models.Model):
     # Prix TTC
     def ttc_price(self):
         return self.price * 1.2
+
+
+
+class Order(models.Model):
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+    ordered = models.BooleanField(default=False)
+    code_produit = models.CharField(max_length=120, blank=True, null=True)
+
+
+    def __str__(self):
+        return f"{self.quantity} of {self.product.name}"
+
+    class Meta:
+        verbose_name_plural = 'Orders'
+        ordering = ('user',)
+
+
+
+class Cart(models.Model):
+    user = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+    orders = models.ManyToManyField(Order)
+    ordered = models.BooleanField(default=False)
+
+    # ordered_date = models.IntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        verbose_name_plural = 'Carts'
+        ordering = ('user',)

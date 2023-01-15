@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-cart">
+        <div class="col-md-12">
+            <h1 class="text-center mt-5 mb-5">Panier</h1>
+
+            {% if user.cart %}
+            <table class="table table-striped text-light">
+                <thead>
+                    <tr class="text-center ftw-bold" style="font-size: 1.5em;">
+                        <th>Produit(s)</th>
+                        <th>Quantité(s)</th>
+                        <th>Prix</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in user.cart.orders.all %}
+                    <tr class="text-center">
+                        <td class="text-light p-3">{{ order.product.name }}</td>
+                        <td class="text-light p-3">{{ order.quantity }}</td>
+                        <td class="text-light p-3">{{ order.product.price|floatformat:2 }}</td>
+                        <td class="text-light p-3">
+                            <a class="btn btn-danger" href="{% url 'delete-product-cart' order.product.slug %}" style="width:auto; padding: 5px;">Supprimer</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <table class="table table-total-price table-condensed text-light">
+                <tr>
+                    <td class="total-tva">Total (HTC) : {{ total|floatformat:2 }} €</td>
+                </tr>
+                <tr>
+                    <!-- 2 chiffres aores la virgule -->
+                    <td class="total-price">Dont TVA : {{ total_tva|floatformat:2 }} €</td>
+                </tr>
+                <tr>
+                    <td class="total-price">Total (TTC) : {{ total_ttc|floatformat:2 }} €</td>
+                </tr>
+            </table>
+
+            <!-- bouton supprimer panier -->
+            <div class="box-btn">
+
+                <div class="btn-left">
+                    <a class="btn btn-success btn-cart" style="width:90%;" href="{% url 'checkout' %}" >Payer</a>
+                </div>
+
+                <div class="btn-right">
+                    <a class="btn btn-danger btn-cart" style="width:90%;" href="{% url 'delete-cart' %}">Supprimer tout le panier</a>
+                </div>
+
+            </div>
+            {% else %}
+            <p class="text-light">Votre panier est vide</p>
+
+            {% endif %}
+
+        </div>
+
+</div>
+{% endblock %}
