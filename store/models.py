@@ -23,12 +23,12 @@ class Product(models.Model):
     name = models.CharField(max_length=120)
     slug = models.SlugField(max_length=520, unique=True)
     price = models.FloatField(default=0.00)
-    price_ttc = models.FloatField(default=0.00, blank=True, null=True)
+    # price_ttc = models.FloatField(default=0.00, blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default='')
     description = models.TextField(max_length=2500)
-    image = models.ImageField(upload_to='products/prod/', default='products/default.png', blank=True, null=True)
+    image = models.ImageField(upload_to='images/store/products/', default='images/store/products/default.png', blank=True, null=True)
     stock = models.IntegerField(default=0)
-    marque_produit = models.CharField(max_length=120, default='')
+    marque_produit = models.CharField(max_length=120)
 
     # Affiche le nom du produit
     def __str__(self):

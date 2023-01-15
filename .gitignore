@@ -1,8 +1,9 @@
-
 *.idea
 *.xml
 *.pyc
 *.psycache
 /kipikshopenv/
+.iml
 *.iml
 /staticfiles/
+

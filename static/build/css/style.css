@@ -60,3 +60,21 @@ container-form {
   justify-content: space-around;
   align-items: baseline;
 }
+
+/*
+ * img
+*/
+.img-product {
+  width: 33% !important;
+}
+
+/*
+ * CARD
+*/
+.card-text {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  margin: auto;
+  text-align: justify;
+}
